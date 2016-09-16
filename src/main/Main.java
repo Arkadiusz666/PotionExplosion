@@ -1,6 +1,7 @@
 package main;
 
 import components.Dispenser;
+import window.DispenserWindow;
 
 import java.util.Scanner;
 
@@ -9,6 +10,11 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        //todo
+        DispenserWindow window = new DispenserWindow();
+
+        //todo
+
         Dispenser dispenser = new Dispenser();
 
 

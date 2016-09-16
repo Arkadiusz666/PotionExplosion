@@ -18,6 +18,6 @@ public class Player {
     Potion brewedPotion2;
 
     public int countPlayerPoints() {
-        int score =
+        return 1;
     }
 }
