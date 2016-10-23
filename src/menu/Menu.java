@@ -1,6 +1,10 @@
 package menu;
 
 import components.Dispenser;
+import menu.commands.Command;
+import menu.commands.DrinkPotionCommand;
+import menu.commands.PickMarbleCommand;
+import menu.commands.ProfessorHelpCommand;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -85,7 +85,13 @@ public class Dispenser {
         return result;
     }
 
-    public boolean isExplosion(int row, int position) {
+    public List<Ingredient> pickIngridientNoExplosion(int row, int position) {
+        //todo
+    }
+
+
+
+        public boolean isExplosion(int row, int position) {
         List<Ingredient> currentRow = rowsList.get(row);
         if (position > 0 && currentRow.get(position).getColor() == currentRow.get(position - 1).getColor()) {
             System.out.println("Explosion!");

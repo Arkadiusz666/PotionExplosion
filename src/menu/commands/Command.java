@@ -1,4 +1,4 @@
-package menu;
+package menu.commands;
 
 import components.Dispenser;
 
