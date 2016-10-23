@@ -37,6 +37,7 @@ public class Dispenser {
             waitingIngredientPool.add(new Ingredient(Color.BLUE));
             waitingIngredientPool.add(new Ingredient(Color.YELLOW));
         }
+        this.fillMissingIngredients();
     }
 
     public void fillMissingIngredients() {
