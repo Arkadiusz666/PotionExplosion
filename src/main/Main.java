@@ -4,6 +4,7 @@ import components.Dispenser;
 import menu.*;
 import menu.Menu;
 import window.DispenserWindow;
+import window.GameWindow;
 
 import java.awt.*;
 import java.util.Scanner;
@@ -15,6 +16,9 @@ public class Main {
     public static void main(String[] args) {
         menu.Menu menu = new Menu();
         menu.runLoop();
+        //
+//        GameWindow window = new GameWindow();
+//        window.doStuff();
 
 
 //        //todo

@@ -21,7 +21,6 @@ public class Dispenser {
         this.prepareDispenser();
     }
 
-
     public Ingredient popRandomIngredientFromWaitingPool() {
         Random random = new Random();
         int randomNumber = random.nextInt(waitingIngredientPool.size());
@@ -85,13 +84,17 @@ public class Dispenser {
         return result;
     }
 
+    //todo - merge with method above
     public List<Ingredient> pickIngridientNoExplosion(int row, int position) {
-        //todo
+        List<Ingredient> result = new ArrayList<>();
+        Ingredient pickedMarble = rowsList.get(row).get(position);
+        result.add(pickedMarble);
+        rowsList.get(row).remove(position);
+        fillMissingIngredients();
+        return result;
     }
 
-
-
-        public boolean isExplosion(int row, int position) {
+    public boolean isExplosion(int row, int position) {
         List<Ingredient> currentRow = rowsList.get(row);
         if (position > 0 && currentRow.get(position).getColor() == currentRow.get(position - 1).getColor()) {
             System.out.println("Explosion!");
@@ -110,7 +113,7 @@ public class Dispenser {
         }
         System.out.printf("\n");
         for (int i = 0; i < 5; i++) {
-            System.out.println(i+" " +rowsList.get(i));
+            System.out.println(i + " " + rowsList.get(i));
         }
 
     }
