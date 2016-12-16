@@ -1,7 +1,9 @@
 package components;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by AKrzos on 2016-08-23.
@@ -33,7 +35,20 @@ public class Player {
     }
 
     public int countBadgesQualified() {
+        Map<PotionType, Integer> potionCount = countPotions(finishedPotions);
         return countBadgesQualifiedDiffirent() + countBadgesQualifiedTheSame();
+    }
+
+    private Map<PotionType, Integer> countPotions(List<Potion> finishedPotions) {
+        Map<PotionType, Integer> potionCountMap = new HashMap<>();
+        for (Potion finishedPotion : finishedPotions) {
+            if (!potionCountMap.containsKey(finishedPotion.getType())) {
+                potionCountMap.put(finishedPotion.getType(), 1);
+            } else {
+                potionCountMap.put(finishedPotion.getType(), potionCountMap.get(finishedPotion.getType())+1);
+            }
+        }
+        return potionCountMap;
     }
 
     private int countBadgesQualifiedTheSame() {
@@ -50,9 +65,9 @@ public class Player {
                     repeatedCounter++;
                 }
             }
-            counter+=repeatedCounter/3;
+            counter += repeatedCounter / 3;
         }
-return 0;
+        return counter;
     }
 
     private int countBadgesQualifiedDiffirent() {
@@ -61,7 +76,7 @@ return 0;
             return 0;
         }
         //todo
-       return 0;
+        return 0;
     }
 
 
